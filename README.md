@@ -12,27 +12,3 @@ Após receber o nome, o sistema continua a conversa, perguntando sobre a experi�
 2: Obter mais informações.
 3: Conhecer os desafios.
 O sistema responde com base na opção escolhida pelo cliente.
-
-Exemplo de Uso
-python
-Copiar código
-def responder_mensagem(mensagem_recebida):
-    # Implementação simples de uma conversa automatizada
-    # ...
-
-# Exemplo de mensagem recebida
-mensagem_do_cliente = "Olá, gostaria de mais informações sobre os desafios."
-responder_mensagem(mensagem_do_cliente)
-Como Executar
-Clone o repositório:
-
-bash
-Copiar código
-git clone https://github.com/seu_usuario/seu_projeto.git
-Execute o script:
-
-bash
-Copiar código
-python nome_do_arquivo.py
-Licença
-MIT
