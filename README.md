@@ -2,10 +2,37 @@
 Repositório do projeto de TI
 
 Desafio de Interação Automatizada
-Este projeto implementa um sistema de interação automatizada, onde clientes podem enviar mensagens para um número de telefone e receber respostas automatizadas com base em um fluxo de opções predefinidas. O objetivo é guiar o cliente através de um processo de inscrição para desafios virtuais.
+Este projeto simula uma interação automatizada onde um cliente envia uma mensagem e recebe respostas automáticas com base em opções predefinidas.
 
-Funcionalidades
-Resposta automática inicial: Responde automaticamente à mensagem inicial do cliente com um agradecimento.
-Solicitação de nome: Pede ao cliente para informar seu nome, personalizando a interação.
-Pergunta sobre experiência com desafios virtuais: O cliente é questionado sobre sua experiência com desafios virtuais, com opções de resposta que direcionam o fluxo da conversa.
-Respostas baseadas em opções: Dependendo da escolha do cliente, o sistema oferece diferentes respostas, como continuar com a inscrição, fornecer mais informações, ou explicar o que são desafios virtuais.
+Como Funciona
+O cliente envia uma mensagem inicial, como: "Olá, gostaria de participar de um desafio".
+O sistema responde com uma mensagem de agradecimento e pergunta o nome do cliente.
+Após receber o nome, o sistema continua a conversa, perguntando sobre a experiência do cliente com desafios virtuais e oferecendo três opções de resposta:
+1: Inscrever-se.
+2: Obter mais informações.
+3: Conhecer os desafios.
+O sistema responde com base na opção escolhida pelo cliente.
+
+Exemplo de Uso
+python
+Copiar código
+def responder_mensagem(mensagem_recebida):
+    # Implementação simples de uma conversa automatizada
+    # ...
+
+# Exemplo de mensagem recebida
+mensagem_do_cliente = "Olá, gostaria de mais informações sobre os desafios."
+responder_mensagem(mensagem_do_cliente)
+Como Executar
+Clone o repositório:
+
+bash
+Copiar código
+git clone https://github.com/seu_usuario/seu_projeto.git
+Execute o script:
+
+bash
+Copiar código
+python nome_do_arquivo.py
+Licença
+MIT
