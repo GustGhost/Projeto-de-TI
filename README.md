@@ -2,4 +2,13 @@
 Repositório do projeto de TI
 
 Desafio de Interação Automatizada
-Este projeto implementa um sistema de interação automatizada, onde clientes podem enviar mensagens para um número de telefone e receber respostas automatizadas com base em um fluxo de opções predefinidas. O objetivo é guiar o cliente através de um processo de inscrição para desafios virtuais.
+Este projeto simula uma interação automatizada onde um cliente envia uma mensagem e recebe respostas automáticas com base em opções predefinidas.
+
+Como Funciona
+O cliente envia uma mensagem inicial, como: "Olá, gostaria de participar de um desafio".
+O sistema responde com uma mensagem de agradecimento e pergunta o nome do cliente.
+Após receber o nome, o sistema continua a conversa, perguntando sobre a experiência do cliente com desafios virtuais e oferecendo três opções de resposta:
+1: Inscrever-se.
+2: Obter mais informações.
+3: Conhecer os desafios.
+O sistema responde com base na opção escolhida pelo cliente.
