@@ -15,11 +15,31 @@ def responder_mensagem(mensagem_recebida):
     print(f"Resposta enviada: {resposta_inicial}")
 
     # Pergunta o nome da pessoa
-    pergunta_nome = "Poderia nos informar seu nome, por favor?"
-    print(f"Resposta enviada: {pergunta_nome}")
+    j = 0
+    while j < 5:
+        pergunta_nome = "Poderia nos informar seu nome, por favor?"
+        print(f"Resposta enviada: {pergunta_nome}")
 
     # Simula a resposta do cliente com o nome
-    nome_cliente = re.match(r"\b\w+\b", input("Cliente responde: ")).group()
+        nome_cliente = re.match(r"^([a-zA-Z]+)", input("Cliente responde: "))
+    
+        if nome_cliente:
+            nome_cliente = nome_cliente.group(1)
+            break
+        else:
+            j += 1
+            if j < 5:
+                print("""
+                      Entrada inválida. Apenas letras e espaços são permitidos.
+                      Digite um nome válido
+                      """)
+            else:
+                print("""
+                    Devido a falta de comunicação, encerraremos o atendimento.
+                    Agradecemos o contato!
+                    """)
+                exit()
+
 
     # Responde com uma saudação personalizada
     saudacao = f"Prazer, {nome_cliente}."
