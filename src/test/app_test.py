@@ -53,8 +53,8 @@ def responder_mensagem(mensagem_recebida):
         else:
             print("""
                 Opção não cadastrada, gostaria de ver novamente as opções?
-                1. SIM
-                2. NÃO (Encerraremos o atendimento)
+                1. Sim
+                2. Não (Encerraremos o atendimento)
                 """)
             opcao_desafios_outra = input()
             if opcao_desafios_outra == "1":
@@ -68,51 +68,76 @@ def responder_mensagem(mensagem_recebida):
 
 
     # Simula o envio de opções de resposta
-    print("Resposta enviada: Ver opções")
-    print("Opções disponíveis:")
-    print("1. Sim, quero me inscrever.")
-    print("2. Sim, mas tenho interesse em mais informações.")
-    print("3. Não, mas quero conhecer.")
+    while True:
+        print("Resposta enviada: Ver opções")
+        print("Opções disponíveis:")
+        print("""
+            1. Sim, quero me inscrever.
+            2. Sim, mas tenho interesse em mais informações.
+            3. Não, mas quero conhecer.
+            4. Não, encerrar atendimento
+            """)
 
     # Simula a escolha de uma opção pelo cliente
-    opcao_escolhida = input("Cliente escolhe a opção (1, 2 ou 3): ")
+        opcao_escolhida = input("Cliente escolhe a opção (1, 2, 3 ou 4): ")
 
     # Responde de acordo com a opção escolhida
-    if opcao_escolhida == "1":
-        resposta_opcao = "Ótimo! Vamos prosseguir com a inscrição."
-        #perguntar sobre o envio das informações
-        print(f'Resposta enviada {resposta_opcao}')
-        print("Pergunta enviada: Posso te enviar as informações de inscrição agora? (Sim/Não)")
-        resposta_inscricao = input("Cliente responde: ")
-        if resposta_inscricao.lower() == "sim":
-            print("Resposta enviada: Excelente! As informações de inscrição estão a caminho.")
-            #informações adicionais
-        else:
-            print("Resposta enviada: Sem problemas, podemos falar em outro momento.")
+        if opcao_escolhida == "1":
+            resposta_opcao = "Ótimo! Vamos prosseguir com a inscrição."
+            #perguntar sobre o envio das informações
+            print(f'Resposta enviada: {resposta_opcao}')
+            print("Pergunta enviada: Posso te enviar as informações de inscrição agora? (Sim/Não)")
+            resposta_inscricao = input("Cliente responde: ")
+            if resposta_inscricao.lower() == "sim":
+                print("Resposta enviada: Excelente! As informações de inscrição estão a caminho.")
+                #informações adicionais
+                break
+            else:
+                print("Resposta enviada: Sem problemas, podemos falar em outro momento.")
+                print("Agradecemos o contato!")
+                exit()
             # Encerrar ou continuar conforme o fluxo
+                
+                
+        elif opcao_escolhida == "2":
+            resposta_opcao = "Entendido! Vamos te passar mais informações."
+            print(f"Resposta enviada: {resposta_opcao}")
+            # Perguntar qual informação deseja mais detalhes
+            i = 0
+            while i < 5:
+                print("Pergunta enviada: Sobre o que gostaria de saber mais? (Desafios, Recompensas, Regras)")
+                resposta_detalhes = input("Cliente responde: ")
+                if resposta_detalhes.lower() in ["desafios", "recompensas", "regras"]:
+                    print(f"Resposta enviada: Enviando mais informações sobre {resposta_detalhes}.")
+                    break
+                    # Fornecer mais informações conforme a escolha
+                else:
+                    i += 1
+                    if i < 5:
+                        print("Resposta enviada: Não entendi, poderia repetir?")
+                    else:
+                        print("""
+                              Devido a falta de comunicação, encerraremos o atendimento.
+                              Agradecemos o contato!
+                              """)
+                        exit()
+                # Repetir ou encerrar
             
-            
-    elif opcao_escolhida == "2":
-        resposta_opcao = "Entendido! Vamos te passar mais informações."
-        print(f"Resposta enviada: {resposta_opcao}")
-        # Perguntar qual informação deseja mais detalhes
-        print("Pergunta enviada: Sobre o que gostaria de saber mais? (Desafios, Recompensas, Regras)")
-        resposta_detalhes = input("Cliente responde: ")
-        if resposta_detalhes.lower() in ["desafios", "recompensas", "regras"]:
-            print(f"Resposta enviada: Enviando mais informações sobre {resposta_detalhes}.")
-            # Fornecer mais informações conforme a escolha
+        elif opcao_escolhida == "3":
+            resposta_opcao = "Que bom que quer conhecer! Vamos te explicar tudo."
+            print(f"Resposta enviada:{resposta_opcao}")
+            #apresentação geral dos desafios por áudio
+            print("Resposta enviada: Vamos te apresentar um resumo sobre nossos desafios...")
+            break
+        elif opcao_escolhida == "4":
+            print("Agradecemos o contato!")
+            exit()
         else:
-            print("Resposta enviada: Não entendi, poderia repetir?")
-            # Repetir ou encerrar
-        
-    elif opcao_escolhida == "3":
-        resposta_opcao = "Que bom que quer conhecer! Vamos te explicar tudo."
-        print(f"Resposta enviada:{resposta_opcao}")
-        #apresentação geral dos desafios por áudio
-        print("Resposta enviada: Vamos te apresentar um resumo sobre nossos desafios...")
-    else:
-        resposta_opcao = "Opção inválida. Por favor, escolha uma das opções disponíveis."
-    print(f"Resposta enviada: {resposta_opcao}")
+            resposta_opcao = "Opção inválida. Por favor, escolha uma das opções disponíveis."
+            print("Caso queira encerrar o atendimento digite 4")
+            continue
+        print(f"Resposta enviada: {resposta_opcao}")
+    
 
 
 # Simulação de uma mensagem recebida do cliente
