@@ -26,7 +26,45 @@ def responder_mensagem(mensagem_recebida):
 
     # Pergunta sobre desafios virtuais
     pergunta_desafios = "Já participou de desafios virtuais? Sabe como funciona?"
-    print(f"Resposta enviada: {pergunta_desafios}")
+    
+    while True:
+        print("""
+                1. Sim, já participei e sei como funciona
+                2. Sim, mas quero saber como funciona
+                3. Não, mas quero saber como funciona
+                4. Não, não quero saber como funciona 
+            """)
+        print(f"Resposta enviada: {pergunta_desafios}")
+        opcao_desafios = input()
+    
+        if opcao_desafios == "1":
+            print("11111111111111111")
+            break
+        elif opcao_desafios == "2":
+            print("22222222222222222")
+            break
+        elif opcao_desafios == "3":
+            print("33333333333333333")
+            break
+        elif opcao_desafios == "4":
+            print("Obrigado pelo contato!")
+            exit()
+        else:
+            print("""
+                Opção não cadastrada, gostaria de ver novamente as opções?
+                1. SIM
+                2. NÃO (Encerraremos o atendimento)
+                """)
+            opcao_desafios_outra = input()
+            if opcao_desafios_outra == "1":
+                continue
+            elif opcao_desafios_outra == "2":
+                print("Obrigado pelo contato!")
+                exit()
+            else:
+                print("Opção inválida. Encerraremos o atendimento.")
+                exit()
+
 
     # Simula o envio de opções de resposta
     print("Resposta enviada: Ver opções")
