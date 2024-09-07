@@ -1,3 +1,4 @@
+import re
     # Primeiramente o cliente manda uma mensagem para o número de Telefone
     
     #Exemplo: "Olá Estou vindo do site e gostaria de participar de um desafio"
@@ -18,7 +19,7 @@ def responder_mensagem(mensagem_recebida):
     print(f"Resposta enviada: {pergunta_nome}")
 
     # Simula a resposta do cliente com o nome
-    nome_cliente = input("Cliente responde: ")
+    nome_cliente = re.match(r"\b\w+\b", input("Cliente responde: ")).group()
 
     # Responde com uma saudação personalizada
     saudacao = f"Prazer, {nome_cliente}."
